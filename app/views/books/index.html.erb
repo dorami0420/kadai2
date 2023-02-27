@@ -1,0 +1,30 @@
+<h1>Books</h1>
+
+<%= form_with model: @book do |f| %>
+
+
+<% @books.each do |book| %>
+
+  <h4>Title</h4>
+  <span>
+     <%= book_to book.show, "/books/#{book.id}" %>
+    </span>
+  
+
+
+
+
+<h2>New book</h2>
+<div>
+  <%= flash[:notice] %>
+</div>
+
+  <p>Title</p>
+  <%= f.text_field :title %>
+
+  <p>Body</p>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
+<% end %>
